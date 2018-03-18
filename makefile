@@ -5,3 +5,5 @@ glove:
 
 run:
 	python build_data.py
+	python THE_model.py
+	python test.py
