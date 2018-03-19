@@ -5,9 +5,7 @@ It's build as a baseline for CS224n project: https://owoshch.github.io/grammar_c
 
 ## Task
 
-Given a paragraph, place the determiners (a, an, the) correctly. 
-
-Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. 
+Given a paragraph, place the determiners (a, an, the) correctly. Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. 
 
 ## Model
 
