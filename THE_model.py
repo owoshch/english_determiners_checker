@@ -349,21 +349,21 @@ def test_NER():
 
       session.run(init)
       for epoch in xrange(config.max_epochs):
-        # print 'Epoch {}'.format(epoch)
+        print 'Epoch {}'.format(epoch)
         start = time.time()
         ###
         train_loss, train_acc = model.run_epoch(session, model.X_train,
                                                 model.y_train)
         val_loss, predictions = model.predict(session, model.X_dev, model.y_dev)
 
-        # print 'Training loss: {}'.format(train_loss)
-        # print 'Training acc: {}'.format(train_acc)
-        # print 'Validation loss: {}'.format(val_loss)
+        print 'Training loss: {}'.format(train_loss)
+        print 'Training acc: {}'.format(train_acc)
+        print 'Validation loss: {}'.format(val_loss)
         dev_presicion = accuracy_score(model.y_dev, predictions)
 
         dev_f1 = f1_score(model.y_dev, predictions, average='macro')
 
-        # print 'Dev acc:', dev_presicion
+        print 'Dev acc:', dev_presicion
         print 'Dev f1:', dev_f1
         with open(model.config.path_log, 'w+') as logs:
           logs.write('epoch %s' % (epoch))
@@ -382,7 +382,7 @@ def test_NER():
         ###
         confusion = calculate_confusion(config, predictions, model.y_dev)
         print_confusion(confusion, model.num_to_tag)
-        # print 'Total time: {}'.format(time.time() - start)
+        print 'Total time: {}'.format(time.time() - start)
 
       saver.restore(session, config.model)
       print 'Test'
