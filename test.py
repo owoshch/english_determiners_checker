@@ -18,15 +18,13 @@ from model.utils import data_iterator
 from model.model import LanguageModel
 from model.config import Config
 
-from TESTModel import NERModel, Config
+from THE_model import NERModel
 
 from os import listdir
 from os.path import isfile, join
 
-dir_model = './weights/ner.weights'
 
 
-seq = "I live in White House"
 
 
 
@@ -81,7 +79,7 @@ def interactive_parser(sess, model):
                 result += prediction.lower() + " "
             result += word + " "
         
-        print result
+        print "output>", result
         
 
         #to_print = align_data({"input": words_raw, "output": result})
@@ -92,7 +90,6 @@ def interactive_parser(sess, model):
 
 
 def main():
-    print ("Hello world!")
     config = Config()
     model = NERModel(config)
 
@@ -100,14 +97,10 @@ def main():
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
     saver = tf.train.Saver()
-    saver.restore(sess, config.dir_weights)
+    saver.restore(sess, config.dir_model)
 
     print "Session restored"
 
-    #input_array = seq.split()
-    #print (input_array)
-
-    #preds = model.predict_labels(sess, input_array)
 
     interactive_parser(sess, model)
 

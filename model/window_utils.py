@@ -3,7 +3,7 @@ import itertools
 from collections import Counter
 import time
 from numpy import *
-
+from config import Config
 
 import pandas as pd
 
@@ -121,7 +121,7 @@ def to_windows(words, word_to_num, tag_to_num, wsize=3):
     pad = (wsize - 1)/2
     words = pad * ["<s>"] + words + pad * ["</s>"]
     words = [canonicalize_word(w, word_to_num) for w in words]
-    return seq_to_windows(words, ["O"] * len(words), word_to_num, tag_to_num)[0]
+    return seq_to_windows(words, ["O"] * len(words), word_to_num, tag_to_num, pad, pad)[0]
 
 
 def docs_to_windows(docs, word_to_num, tag_to_num, wsize=3):

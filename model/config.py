@@ -57,22 +57,19 @@ class Config():
 
 
     # dataset
-    #filename_train = filename_dev = filename_test = "./data/ner/dev"
-    #filename_train = "./data/ner/train"
-    #filename_test = filename_dev = "./data/ner/dev"
     filename_dev = "./data/det/dev_preprocessed_articles_lines.txt" 
     filename_test = "./data/det/test_preprocessed_articles_lines.txt"
     filename_train = "./data/det/train_preprocessed_articles_lines.txt"
     max_iter = None # if not None, max number of examples in Dataset
 
     # general config
-    dir_output = "results/window/"
+    dir_output = "results/window_3/"
     dir_model  = dir_output + "model.weights/"
     dir_weights = './weights/ner.weights'
     path_log   = dir_output + "log.txt"
 
     # embeddings
-    dim_word = 50
+    dim_word = 300
 
 
     # glove files
@@ -90,9 +87,8 @@ class Config():
 
 
     # training
-    embed_size = 50
+    embed_size = 300
     batch_size = 64
-    label_size = 5
     hidden_size = 100
     max_epochs = 20
     early_stopping = 2
