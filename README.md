@@ -21,6 +21,7 @@ The model is built on top of the assignment 2 from CS224d.
 
 I took data preprocessing part from the wonderful repo explaining how to build your own Named Entity Recognition system from scratch. Check out and star the repo [Sequence tagging](https://github.com/guillaumegenthial/sequence_tagging).
 
+You need python 2.7 installed in your environment. 
 
 1. Download the GloVe vectors with
 
