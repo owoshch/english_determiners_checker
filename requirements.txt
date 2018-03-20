@@ -2,3 +2,7 @@ tensorflow>=1.0
 numpy
 logging
 requests
+pandas
+sklearn
+scipy
+tensorflow-gpu
