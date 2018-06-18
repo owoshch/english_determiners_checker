@@ -1,7 +1,7 @@
 # English determiners checker
 
 This repo implements a window classification model using Tensorflow.
-It's build as a baseline for CS224n project: https://owoshch.github.io/grammar_checker/
+It's built as a baseline for CS224n project: https://owoshch.github.io/grammar_checker/
 
 ## Task
 
